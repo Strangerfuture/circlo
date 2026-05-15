@@ -1,5 +1,6 @@
 from app.schemas import UserCreate, UserRead, UserUpdate
 from fastapi import FastAPI, HTTPException, File, UploadFile, Form, Depends
+from fastapi.responses import JSONResponse
 from app.db import Post, create_db_and_tables, get_async_session, User
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -28,9 +29,9 @@ app.include_router(fastapi_users.get_users_router(UserRead, UserUpdate), prefix=
 async def root():
     return {"status": "ok"}
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health():
-    return {"healthy": True}
+    return JSONResponse({"healthy": True})
 
 @app.post("/upload")
 async def upload_file(
