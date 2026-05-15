@@ -53,7 +53,7 @@ def login_page():
             if st.button("Sign Up", type="secondary", use_container_width=True):
                 # Register using FastAPI Users
                 signup_data = {"email": email, "password": password}
-                response = requests.post("https://mini-social-p881.onrender.com/auth/register", json=signup_data)
+                response = requests.post("https://mini-social-p881.onrender.com/auth/jwt/register", json=signup_data)
 
                 if response.status_code == 201:
                     st.success("Account created! Click Login now.")
