@@ -24,6 +24,13 @@ app.include_router(fastapi_users.get_reset_password_router(), prefix='/auth/jwt'
 app.include_router(fastapi_users.get_verify_router(UserRead), prefix='/auth/jwt', tags=["auth"])
 app.include_router(fastapi_users.get_users_router(UserRead, UserUpdate), prefix='/auth/jwt', tags=["auth"])
 
+@app.get("/")
+async def root():
+    return {"status": "ok"}
+
+@app.get("/health")
+async def health():
+    return {"healthy": True}
 
 @app.post("/upload")
 async def upload_file(
