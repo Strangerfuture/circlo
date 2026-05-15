@@ -1,6 +1,6 @@
 from app.schemas import UserCreate, UserRead, UserUpdate
 from fastapi import FastAPI, HTTPException, File, UploadFile, Form, Depends
-from db import Post, create_db_and_tables, get_async_session, User
+from app.db import Post, create_db_and_tables, get_async_session, User
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
