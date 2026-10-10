@@ -1,4 +1,4 @@
-# Mini Social
+# circlo
 
 A lightweight social networking application built with **FastAPI, Streamlit, and Python**, featuring a separate backend API and interactive web frontend.
 
@@ -22,7 +22,7 @@ The application separates the frontend from the backend:
 ## Project Structure
 
 ```text
-mini_social/
+circlo/
 ├── app/
 │   ├── db.py
 │   ├── images.py
@@ -47,7 +47,7 @@ mini_social/
 
 ```bash
 git clone https://github.com/Strangerfuture/mini_social.git
-cd mini_social
+cd circlo
 ```
 
 ### 2. Install Dependencies
